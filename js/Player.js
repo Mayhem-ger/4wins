@@ -6,6 +6,10 @@ class Player {
     this.active = active;
     this.tokens = this.createTokens(21);
   }
+  /**
+   * Creates tokens for the players in order to play the game
+   * @param {integer} num 
+   */
 
   createTokens(num) {
 
