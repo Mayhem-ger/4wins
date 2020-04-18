@@ -8,13 +8,26 @@ class Board {
      * 
      */
     createSpaces() {
-        const spaceList = [];
+        const spaces = [];
         
-        for (let i = 0; i < 8; i++) {
-            for (let j = 0; j < 7; j++ ) {
-                spaceList.push([i,j])
+        for (let x = 0; x < 7; x++) {
+            const col = [];
+
+            for (let y = 0; y < 6; y++ ) {
+                const space = new Space(x,y)
+                col.push(space);
+            }
+            spaces.push(col)
+        }
+    return spaces;
+        
+    }
+    
+    drawHTMLBoard() {
+        for (let column of this.spaces) {
+            for (let space of column) {
+                space.drawSVGSpace();
             }
         }
-        return spaceList
-    } 
+    }
 }

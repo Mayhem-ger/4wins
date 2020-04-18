@@ -13,12 +13,21 @@ class Player {
 
   createTokens(num) {
 
-    const tokens = [];
+    const tokenList = [];
     
     for (let i = 0; i < num+1; i++) {
         let token = new Token(i, this);
-        this.tokens.push(token);
+        tokenList.push(token);
     }
-    return tokens;
+    return tokenList;
+  }
+  get unusedToken() {
+    return this.tokens.filter(elem => !elem.isPlayed)
+    
+  }
+
+  get activeToken() {
+    return this.unusedToken[0];
+  }
 }
-}
+

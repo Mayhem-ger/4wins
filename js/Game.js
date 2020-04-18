@@ -9,7 +9,19 @@ class Game {
         return players;
     };
 
+    get activePlayer () {
+        return this.players.find(player => player.active)
+    }
+
     startGame(){
+        this.board.drawHTMLBoard();
+        this.activePlayer.activeToken.drawHTMLToken();
+        this.ready = true;
         
     }
+
+    handleKeydown() {
+        
+    }
+
 }   
